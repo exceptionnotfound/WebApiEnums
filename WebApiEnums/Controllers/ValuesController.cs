@@ -11,7 +11,6 @@ namespace WebApiEnums.Controllers
     [RoutePrefix("Values")]
     public class ValuesController : ApiController
     {
-        // GET api/values
         [Route("Person")]
         [HttpGet]
         public Person Get()
