@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
@@ -13,6 +15,9 @@ namespace WebApiEnums
             // Web API configuration and services
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+
+            //Uncomment the line below to have all enums serialized to their name
+            //config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new StringEnumConverter());
 
             // Web API routes
             config.MapHttpAttributeRoutes();

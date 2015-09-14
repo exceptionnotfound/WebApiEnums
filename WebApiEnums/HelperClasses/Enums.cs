@@ -7,7 +7,7 @@ using System.Web;
 
 namespace WebApiEnums.HelperClasses
 {
-    [JsonConverter(typeof(StringEnumConverter))]
+    [JsonConverter(typeof(StringEnumConverter))] //Serializes all instances of this enumeration to their name, rather than their value
     public enum Language
     {
         English,
