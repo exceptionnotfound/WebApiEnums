@@ -36,5 +36,17 @@ namespace WebApiEnums.Controllers
             }
             return languages;
         }
+
+        [Route("SendLanguage/{language}")]
+        [HttpPost]
+        public Language? SendLanguage(string language)
+        {
+            Language parsedLanguage;
+            if(Enum.TryParse<Language>(language, true /* ignore case */, out parsedLanguage))
+            {
+                return parsedLanguage;
+            }
+            return null;
+        }
     }
 }
